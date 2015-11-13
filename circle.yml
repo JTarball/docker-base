@@ -19,4 +19,4 @@ dependencies:
 test:
   override:
         - docker build -t "jtarball/docker-base:latest" .
-        - ~/official-images/test/run.sh "python"
+        - ~/official-images/test/run.sh -t utc "jtarball/docker-base:latest"
