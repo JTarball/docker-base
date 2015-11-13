@@ -19,7 +19,7 @@ ENV ENV_TYPE dev
 
 # Basic stuff...
 RUN gpg --keyserver pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4
-RUN apt-get -yq update apt-get -yq install \
+RUN apt-get -yq update && apt-get -yq install \
         git \
         curl \
         net-tools \
@@ -41,6 +41,7 @@ RUN apt-get -yq update apt-get -yq install \
         openssh-sftp-server \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
+
 # Install node.js, then npm install yo and the generators
 RUN curl -sL https://deb.nodesource.com/setup_0.12 | bash - && \
     apt-get -yq install nodejs
