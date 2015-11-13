@@ -1,15 +1,16 @@
-# If you modify this file, rebuild and push 
-# remember to change tag in app dockerfile
-
-FROM debian:jessie
-MAINTAINER James Tarball <james.tarball@gmail.com>
-
-
-
+#
+# A base image for django backend web application 
+#
+# Please README.md for how to use this Docker Container
+#
 # This code is inspired from the source code:
 # https://github.com/smaato/docker-quickstart
 # https://www.smaato.com/quickstart-a-web-development-stack-using-vagrant-docker/ 
 # 
+# Also tried to keep to best practice: https://github.com/docker-library/official-images
+#
+FROM debian:jessie
+MAINTAINER James Tarball <james.tarball@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV APP_DIR /app
@@ -36,6 +37,7 @@ RUN apt-get -yq update && \
 RUN curl -sL https://deb.nodesource.com/setup_0.12 | bash - && \
     apt-get -yq install nodejs
 
+# Polymer Front End Support
 RUN npm install -g npm@2.13.0 && \
     npm install -g gulp && \
     npm install -g yo@1.4.7 bower@1.4.1 gulp@3.9.0 && \
@@ -55,6 +57,7 @@ RUN sudo echo "Europe/London" > /etc/timezone
 RUN sudo dpkg-reconfigure -f noninteractive tzdata
 
 # Add a yeoman user because grunt etc. doesn't like being root
+# Yeoman user is required if this is used as part of a yeoman generator
 RUN adduser --disabled-password --gecos "" yeoman && \
   echo "yeoman ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
@@ -73,9 +76,9 @@ RUN chown yeoman:yeoman $BUILD_DIR
 USER yeoman
 
 # To stop boiler-plate code, specify some onbuild commands
-# 1. install pip requirements   - install requirements based on environment type (dev/production)
-# 2. copy app folder            - code source code (you can then mount using docker-compose for development)
-# 3. copy and define entrypoint
+# 1. install pip requirements    - install requirements based on environment type (dev/production)
+# 2. copy app folder             - code source code (you can then mount using docker-compose for development)
+# 3. copy and define entrypoint  - script running required command/s (see Dockerfile best practices)
 ONBUILD COPY requirements $BUILD_DIR/requirements
 ONBUILD RUN sudo pip install -r $BUILD_DIR/requirements/$ENV_TYPE.txt
 ONBUILD COPY app $APP_DIR
@@ -88,5 +91,3 @@ ONBUILD ENTRYPOINT ["/entrypoint.sh"]
 VOLUME $APP_DIR
 
 CMD /bin/bash
-
-
