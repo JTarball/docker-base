@@ -1,9 +1,10 @@
 [![nodesource/node](http://dockeri.co/image/jtarball/docker-base)](https://hub.docker.com/r/jtarball/docker-base/)
 
+[![Circle CI](https://circleci.com/gh/JTarball/docker-base.svg?style=svg)](https://circleci.com/gh/JTarball/docker-base)
 
 # Supported tags and respective `Dockerfile` links
 
--	[`3.0.5`, `3.0`, `3`, `latest` (*3.0/Dockerfile*)](https://github.com/docker-library/redis/blob/8929846148513a1e35e4212003965758112f8b55/3.0/Dockerfile)
+-	[`latest` (/Dockerfile*)](https://github.com/JTarball/docker-base/blob/master/Dockerfile)
 
 # What is docker-base?
 
@@ -28,9 +29,12 @@ $ touch requirements/base.txt requirements/dev.text requirements/prod.txt
 ```console
 $ touch docker-entrypoint.sh
 ```
+
+docker-entrypoint.sh should contain any relevant commands, inititalisation required for a successful run of this new container. Please see Dockerfile best practices for more information.
+
 ## create a new Dockerfile
 e.g.
-```console
+```dockerfile
 FROM jtarball/docker-base:latest
 MAINTAINER James Tarball <james.tarball@gmail.com>
 
@@ -58,6 +62,8 @@ $ docker-compose up
 View [license information](https://github.com/JTarball/docker-base/blob/master/LICENSE) for the software contained in this image.
 
 # User Feedback
+
+Any feedback or comments  would be greatly appreciated: <james.tarball@gmail.com>
 
 ## Issues
 
