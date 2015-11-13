@@ -19,4 +19,5 @@ dependencies:
 test:
   override:
         - docker build -t "jtarball/docker-base:latest" .
-        - ~/official-images/test/run.sh -t python-imports "jtarball/docker-base:latest"
+        - sudo cp -r tests/* ~/official-images/test/tests
+        - ~/official-images/test/run.sh --config ~/official-images/test/config.sh --config ./config.sh "jtarball/docker-base:latest"
