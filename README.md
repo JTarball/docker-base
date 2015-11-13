@@ -47,8 +47,10 @@ CMD ["app"]
 ```
 
 This Dockerfile MUST include the following:
- - ENV_TYPE     - environment type for requirements install so in this example can only be ('base', 'dev', 'prod')
- - APP_DIR      - application directory
+* ENV_TYPE
+  - environment type for requirements install so in this example can only be ('base', 'dev', 'prod')
+* APP_DIR
+  - application directory
 
 ### build & run using docker-compose
 e.g.
