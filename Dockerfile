@@ -31,6 +31,7 @@ RUN apt-get -yq update && apt-get -yq install \
         postgresql-contrib \
         npm \
         vim \
+        bash \
         bash-completion \
         python-dev \
         python \

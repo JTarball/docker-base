@@ -16,5 +16,5 @@ imageTests+=(
 )
 
 globalExcludeTests+=(
-	[docker-base_utc]=1
+	[utc]=1
 )
