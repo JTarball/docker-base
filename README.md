@@ -13,21 +13,21 @@ docker-base is a base image for a multi-container Docker web project. It will co
 
 
 # How to use this image
-## create a new folder named '<new_docker_image_name>'
+## create a new folder
 e.g.
 ```console
 $ mkdir app
 ```
 ### create 'requirements' directory
 e.g.
-```console
-$ cd app
-$ mkdir requirements
-$ touch requirements/base.txt requirements/dev.text requirements/prod.txt
+```Shell
+cd app
+mkdir requirements
+touch requirements/base.txt requirements/dev.text requirements/prod.txt
 ```
 ### create 'docker-entrypoint.sh'
 ```console
-$ touch docker-entrypoint.sh
+touch docker-entrypoint.sh
 ```
 
 docker-entrypoint.sh should contain any relevant commands, inititalisation required for a successful run of this new container. Please see Dockerfile best practices for more information.
@@ -53,8 +53,8 @@ This Dockerfile MUST include the following:
 ## build & run using docker-compose
 e.g.
 ```console
-$ docker-compose build
-$ docker-compose up 
+docker-compose build
+docker-compose up 
 ```
 
 # License
