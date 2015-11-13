@@ -18,13 +18,21 @@ ENV BUILD_DIR /tmp
 ENV ENV_TYPE dev
 
 # Basic stuff...
+RUN gpg --keyserver pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4
 RUN apt-get -yq update && \
-    apt-get -yq install git curl net-tools sudo bzip2 libpng-dev locales-all \
+    apt-get -yq install \
+        git \
+        curl \
+        net-tools \
+        sudo \
+        bzip2 \
+        libpng-dev \
+        locales-all \
         build-essential \
         postgresql-contrib \
         npm \
         vim \
-        bash-completion \ 
+        bash-completion \
         python-dev \
         python \
         python-pip \
@@ -44,7 +52,6 @@ RUN npm install -g npm@2.13.0 && \
     npm install -g generator-polymer git://github.com/JTarball/generator-django-polymer.git
 
 # grab gosu for easy step-down from root
-RUN gpg --keyserver pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates wget && rm -rf /var/lib/apt/lists/* \
     && wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/1.2/gosu-$(dpkg --print-architecture)" \
     && wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/1.2/gosu-$(dpkg --print-architecture).asc" \
