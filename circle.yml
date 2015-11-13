@@ -19,5 +19,7 @@ dependencies:
 test:
   override:
         - docker build -t "jtarball/docker-base:latest" .
+        # Copy all tests into official folder and combine configs
         - sudo cp -r tests/* ~/official-images/test/tests
-        - ~/official-images/test/run.sh --config ~/official-images/test/config.sh --config ./config.sh "jtarball/docker-base:latest"
+        - cat ./config.sh >> ~/official-images/test/test/config.sh
+        - ~/official-images/test/run.sh "jtarball/docker-base:latest"
