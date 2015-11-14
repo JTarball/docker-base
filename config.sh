@@ -47,8 +47,10 @@ imageTests+=(
 		docker-dind
 	'
 	[jtarball/docker-base:latest]='
-		postgres-basics
-		postgres-initdb
+		python-hy
+		python-imports
+		python-pip-requests-ssl
+		python-sqlite3
 	'
 	[django]='
 	'
