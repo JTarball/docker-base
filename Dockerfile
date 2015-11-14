@@ -60,7 +60,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
     && wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/1.2/gosu-$(dpkg --print-architecture).asc" \
     && gpg --verify /usr/local/bin/gosu.asc \
     && rm /usr/local/bin/gosu.asc \
-    && chmod +x /usr/local/bin/gosu
+    && chmod u+sx /usr/local/bin/gosu
 
 # shellshock fix
 RUN apt-get -yq update && apt-get -yq install  --only-upgrade bash \
