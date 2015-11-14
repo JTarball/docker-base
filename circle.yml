@@ -31,4 +31,4 @@ test:
         - sudo cp -r tests/* ~/official-images/test/tests
         #- mv ./config.sh ~/official-images/test/config.sh
         # - ~/official-images/test/run.sh "jtarball/docker-base:latest"
-        - ~/official-images/test/run.sh --config ~/official-images/test/config.sh --config ./my-config.sh "jtarball/docker-base:latest"
+        - ~/official-images/test/run.sh --config ~/official-images/test/config.sh --config ./config.sh "jtarball/docker-base:latest"
