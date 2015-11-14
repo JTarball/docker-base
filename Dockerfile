@@ -17,6 +17,9 @@ ENV APP_DIR /app
 ENV BUILD_DIR /tmp
 ENV ENV_TYPE prod
 
+# add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
+RUN groupadd -r app && useradd -r -g app app
+
 # Basic stuff...
 RUN gpg --keyserver pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4
 RUN apt-get -yq update && apt-get -yq install \
