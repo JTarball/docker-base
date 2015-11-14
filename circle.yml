@@ -21,5 +21,5 @@ test:
         - docker build -t "jtarball/docker-base:latest" .
         # Copy all tests into official folder and combine configs
         - sudo cp -r tests/* ~/official-images/test/tests
-        - cat ./config.sh >> ~/official-images/test/config.sh
+        - mv ./config.sh ~/official-images/test/config.sh
         - ~/official-images/test/run.sh "jtarball/docker-base:latest"
