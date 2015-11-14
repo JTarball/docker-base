@@ -31,7 +31,6 @@ RUN apt-get -yq update && apt-get -yq install \
         postgresql-contrib \
         npm \
         vim \
-        bash \
         bash-completion \
         python-dev \
         python \
@@ -60,6 +59,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
     && gpg --verify /usr/local/bin/gosu.asc \
     && rm /usr/local/bin/gosu.asc \
     && chmod +x /usr/local/bin/gosu
+
+# shell shock
+RUN apt-get -yq update && apt-get -yq install  --only-upgrade bash \
+&& apt-get clean \
+&& rm -rf /var/lib/apt/lists/*
 
 # Set the timezone.
 RUN sudo echo "Europe/London" > /etc/timezone

@@ -1,4 +1,10 @@
 #!/bin/bash
+
+#
+# Copy of config.sh from official library + custom tests
+# Can't seem to get two config files working
+# Will need to update this periodically
+
 set -e
 
 globalTests+=(
@@ -6,8 +12,6 @@ globalTests+=(
 	cve-2014--shellshock
 	no-hard-coded-passwords
 	override-cmd
-	postgres
-	python
 )
 
 testAlias+=(
@@ -41,6 +45,10 @@ imageTests+=(
 	'
 	[docker:dind]='
 		docker-dind
+	'
+	[docker-base:latest]='
+		postgres-basics
+		postgres-initdb
 	'
 	[django]='
 	'
