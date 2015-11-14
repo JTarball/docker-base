@@ -46,7 +46,7 @@ imageTests+=(
 	[docker:dind]='
 		docker-dind
 	'
-	[docker-base:latest]='
+	[jtarball/docker-base:latest]='
 		postgres-basics
 		postgres-initdb
 	'
