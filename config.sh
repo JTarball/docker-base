@@ -47,7 +47,6 @@ imageTests+=(
 		docker-dind
 	'
 	[jtarball/docker-base:latest]='
-		python-hy
 		python-imports
 		python-pip-requests-ssl
 		python-sqlite3
