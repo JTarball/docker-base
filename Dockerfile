@@ -92,13 +92,13 @@ USER yeoman
 # 1. install pip requirements    - install requirements based on environment type (dev/production)
 # 2. copy app folder             - code source code (you can then mount using docker-compose for development)
 # 3. copy and define entrypoint  - script running required command/s (see Dockerfile best practices)
-ONBUILD COPY requirements $BUILD_DIR/requirements
-ONBUILD RUN sudo pip install -r $BUILD_DIR/requirements/$ENV_TYPE.txt
-ONBUILD COPY app $APP_DIR
+#ONBUILD COPY requirements $BUILD_DIR/requirements
+#ONBUILD RUN sudo pip install -r $BUILD_DIR/requirements/$ENV_TYPE.txt
+#ONBUILD COPY app $APP_DIR
 
-ONBUILD COPY docker-entrypoint.sh /entrypoint.sh
-ONBUILD RUN sudo chmod +x /entrypoint.sh
-ONBUILD ENTRYPOINT ["/entrypoint.sh"]
+#ONBUILD COPY docker-entrypoint.sh /entrypoint.sh
+#ONBUILD RUN sudo chmod +x /entrypoint.sh
+#ONBUILD ENTRYPOINT ["/entrypoint.sh"]
 
 
 VOLUME $APP_DIR
