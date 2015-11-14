@@ -46,6 +46,8 @@ RUN apt-get -yq update && apt-get -yq install \
 RUN curl -sL https://deb.nodesource.com/setup_0.12 | bash - && \
     apt-get -yq install nodejs
 
+
+
 # Polymer Front End Support
 RUN npm install -g npm@2.13.0 && \
     npm install -g gulp && \
@@ -80,6 +82,7 @@ ENV LANG en_GB.UTF-8
 
 RUN mkdir -p $APP_DIR
 RUN mkdir -p $BUILD_DIR
+RUN mkdir -p $BUILD_DIR/requirements
 WORKDIR $APP_DIR
 
 RUN chown yeoman:yeoman $APP_DIR
