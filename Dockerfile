@@ -60,7 +60,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
     && rm /usr/local/bin/gosu.asc \
     && chmod +x /usr/local/bin/gosu
 
-# shell shock
+# shellshock fix
 RUN apt-get -yq update && apt-get -yq install  --only-upgrade bash \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*

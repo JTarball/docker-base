@@ -5,7 +5,9 @@
 # For circle.yml explanation, see: https://circleci.com/docs/manually
 # Python specific configuration, see: https://circleci.com/docs/language-python
 #
-
+# 
+# Support for custom / official tests
+#
 machine:
     services:
         - docker
@@ -27,6 +29,6 @@ test:
         - docker build -t "jtarball/docker-base:latest" .
         # Copy all tests into official folder and combine configs
         - sudo cp -r tests/* ~/official-images/test/tests
-        - mv ./config.sh ~/official-images/test/config.sh
+        #- mv ./config.sh ~/official-images/test/config.sh
         # - ~/official-images/test/run.sh "jtarball/docker-base:latest"
         - ~/official-images/test/run.sh --config ~/official-images/test/config.sh --config ./my-config.sh "jtarball/docker-base:latest"
