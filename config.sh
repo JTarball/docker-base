@@ -25,5 +25,5 @@ imageTests+=(
 
 globalExcludeTests+=(
 	# single-binary images
-	[utc]=1
+	[jtarball/docker-base:latest_utc]=1
 )
