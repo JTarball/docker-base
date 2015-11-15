@@ -9,6 +9,7 @@
 # 
 # Also tried to keep to best practice: https://github.com/docker-library/official-images
 #
+
 FROM debian:8.2
 MAINTAINER James Tarball <james.tarball@gmail.com>
 
