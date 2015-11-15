@@ -49,8 +49,6 @@ RUN apt-get -yq update && apt-get -yq install \
 RUN curl -sL https://deb.nodesource.com/setup_0.12 | bash - && \
     apt-get -yq install nodejs
 
-
-
 # Polymer Front End Support
 RUN npm install -g npm@2.13.0 && \
     npm install -g gulp && \
@@ -63,7 +61,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
     && wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/1.2/gosu-$(dpkg --print-architecture).asc" \
     && gpg --verify /usr/local/bin/gosu.asc \
     && rm /usr/local/bin/gosu.asc \
-    && chmod u+sx /usr/local/bin/gosu
+    && chmod +x /usr/local/bin/gosu
 
 # shellshock fix
 RUN apt-get -yq update && apt-get -yq install  --only-upgrade bash \
