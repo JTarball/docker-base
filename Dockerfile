@@ -74,6 +74,7 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 # Node, Yeoman and a few more useful stuff
 RUN npm install -g yo && \
     npm install -g webpack && \
+    npm install -g babel && \
     npm install -g bower
 
 # grab gosu for easy step-down from root
