@@ -4,7 +4,7 @@
 
 #### Supported tags and respective `Dockerfile` links
 
--	[`v1.0`, `v1.0b1`, `latest` (/Dockerfile*)](https://github.com/JTarball/docker-base/blob/master/Dockerfile)
+-	[`v1.0`, `v1.0b1`, `v1.0b2`, `latest` (/Dockerfile*)](https://github.com/JTarball/docker-base/blob/master/Dockerfile)
 
 # What is docker-base?
 
