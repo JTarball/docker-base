@@ -113,6 +113,6 @@ RUN chown yeoman:yeoman $BUILD_DIR
 # Always run as the yeoman user - YO commands will not work otherwises!
 USER yeoman
 
-VOLUME $APP_DIR
+#VOLUME $APP_DIR
 
 CMD /bin/bash
