@@ -25,7 +25,7 @@ ENV NODE_VERSION 5.0.0
 
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
-RUN groupadd -r app && useradd -r -g app app
+RUN groupadd -r app --gid=999 && useradd -r -g app --uid=999 app app
 
 # Basic stuff...
 RUN gpg --keyserver pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4
