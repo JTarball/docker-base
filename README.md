@@ -11,7 +11,6 @@
 docker-base is a base image for a multi-container Docker web project. It will contain all the packages required for a normal web server. It was designed with django in mind and with Polymer for its frontend however it can easily be modified for any web application.
 
 
-
 ## How to use this image
 ### create a new folder
 e.g.
