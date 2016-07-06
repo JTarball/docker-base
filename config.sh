@@ -8,7 +8,7 @@
 set -e
 
 globalTests+=(
-	gmt
+	bst
 )
 
 testAlias+=(
