@@ -23,6 +23,12 @@ ENV BUILD_DIR /tmp
 ENV NPM_CONFIG_LOGLEVEL info
 ENV NODE_VERSION 5.0.0
 
+# Add Label Badges to Dockerfile powered by microbadger
+ARG VCS_REF
+
+LABEL org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-url="e.g. https://github.com/microscaling/microscaling"
+
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r app --gid=999 && useradd -r -g app --uid=999 app
